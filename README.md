@@ -1,24 +1,5 @@
-# README
+<h1> Alpha Rails Blog </h1>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<p>A blog that uses Ruby on Rails</p>
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+<h2>You can access it here: https://aplha-rails-blog.herokuapp.com</h2>
