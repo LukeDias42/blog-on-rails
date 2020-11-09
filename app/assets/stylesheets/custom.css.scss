@@ -22,12 +22,24 @@
   margin-top: 25px;
 }
 
+#about-container{
+  margin-top: 25px;
+}
+
 #toggler{
   background-color: lightgrey;
 }
 
-.jumbotron{
+#home-jumbotron{
   background-image: asset_url('second_home_image.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 425px;
+}
+
+#about-jumbotron{
+  background-image: asset_url('third_about_image.jpg');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -38,7 +50,7 @@ html, body {
   height: 100%;
 }
 
-#home-content {
+#page-content {
   flex: 1 0 auto;
   background-color: lightgray;
 }
