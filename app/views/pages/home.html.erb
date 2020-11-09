@@ -1,4 +1,21 @@
-<h1>Welcome to the home page</h1>
-
-<%= link_to 'Articles listing', articles_path %>
-<%= link_to 'About page', about_path %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="home-content">
+    <div class="container" id="home-container">
+      <div class="jumbotron text-white">
+        <h1 class="display-4">Welcome to Alpha Rails Blog</h1>
+        <p class="lead">Here you are able to create articles and share them with everyone.</p>
+        <hr class="my-4">
+        <a class="btn btn-primary btn-lg " href="#" role="button">Sign up</a>
+        <%= link_to "About", about_path, class: "btn btn-primary btn-lg" %>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
