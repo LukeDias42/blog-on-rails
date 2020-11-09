@@ -1,4 +1,7 @@
 <h1>ARTICLES DETAILS</h1>
 <p><strong>Title: </strong><%= @article.title %></p>
 <p><strong>Description: </strong><%= @article.description %></p>
-<%= link_to 'Go back to the list of articles', articles_path() %>
+<p><%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'List of articles', articles_path() %> |
+<%= link_to 'Delete', article_path(@article), method: :delete %> 
+</p>
