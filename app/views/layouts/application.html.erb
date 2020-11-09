@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>AlphaRailsBlog</title>
+    <title>Alpha Rails Blog</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,9 @@
   </head>
 
   <body>
+    <% flash.each do |name, message| %>
+      <%= message %>
+    <% end %>
     <%= yield %>
   </body>
 </html>
