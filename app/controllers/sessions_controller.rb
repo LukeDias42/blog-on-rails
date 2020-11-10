@@ -1,6 +1,9 @@
 class SessionsController < ApplicationController
 
+  before_action :require_no_log_in, only: [:new, :create]
+
   def new
+
   end
 
   def create
@@ -21,5 +24,12 @@ class SessionsController < ApplicationController
     redirect_to root_path
   end
 
+  private
+  def require_no_log_in
+    if logged_in?
+      flash[:alert] = "You have already logged in"
+      redirect_to current_user
+    end
+  end
 
 end
