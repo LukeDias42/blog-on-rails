@@ -35,7 +35,11 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <%= link_to 'Articles', articles_path, class: "dropdown-item" %>
-              <%= link_to 'New Article', new_article_path, class: "dropdown-item" %>
+              <% if logged_in?%>
+                <%= link_to 'New Article', new_article_path, class: "dropdown-item" %>
+              <% else %>
+              <%= link_to 'New Article', new_article_path, class: "disabled dropdown-item" %>
+              <% end %>
             </div>
           </li>
 

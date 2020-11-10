@@ -2,15 +2,26 @@
 <html lang="en">
 <body>
   <h1 class="text-center mt-4">All Articles</h1>
+
+  <% if logged_in?%>
+    <div class="container" id="new-button-container">
+      <div class="row justify-content-md-center">
+        <div class="mt-4">
+          <%= link_to 'NEW', new_article_path(), class: "btn btn-success btn-lg shadow-sm rounded"%>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
   <div class="flickr_pagination">
     <%= will_paginate @articles, :container => false %>
   </div>
+
   <%= render 'article' %>
-  <div class="container" id="new-button-container">
-    <%= link_to 'NEW', new_article_path(), class: "btn btn-success btn-lg btn-block"%>
-  </div>
+
   <div class="flickr_pagination md-4">
     <%= will_paginate @articles, :container => false %>
   </div>
+
   </body>
 </html>
