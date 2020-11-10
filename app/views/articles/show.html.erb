@@ -12,7 +12,9 @@
           <%= simple_format(@article.description) %>
         </div>
         <%= link_to 'Edit', edit_article_path(@article), class: "btn btn-outline-info" %>
-        <%= link_to 'DELETE', article_path(@article), method: :delete, class: "btn btn-outline-danger" %>
+        <% if logged_in? && @article.user == current_user %>
+          <%= link_to 'DELETE', article_path(@article), method: :delete, class: "btn btn-outline-danger" %>
+        <% end %>
       </div>
       <div class="card-footer text-muted">
         <small>
