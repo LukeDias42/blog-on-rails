@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
 <body>
-  <h1 class="text-center mt-4">All Articles <span class="badge badge-info"><%= @articles.length() %></span></h1>
+  <h1 class="text-center mt-4">All Articles</h1>
+  <div class="flickr_pagination">
+    <%= will_paginate @articles, :container => false %>
+  </div>
   <%= render 'article' %>
   <div class="container" id="new-button-container">
     <%= link_to 'NEW', new_article_path(), class: "btn btn-success btn-lg btn-block"%>
+  </div>
+  <div class="flickr_pagination md-4">
+    <%= will_paginate @articles, :container => false %>
   </div>
   </body>
 </html>
