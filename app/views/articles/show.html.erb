@@ -4,7 +4,8 @@
   <div class="container">
     <div class="card text-center shadow mb-5 bg-white rounded">
       <div class="card-header">
-        <%= "Entry #" + @article.id.to_s %>
+        by <%= link_to @article.user.username, @article.user %>
+        <%= link_to gravatar_for(@article.user), @article.user %>
       </div>
       <div class="card-body">
         <div class="card-text">
