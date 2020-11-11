@@ -9,6 +9,15 @@
     </div> 
   <% end %>
   <h3 class="text-center mt-4">Articles</h3>
+  <% if logged_in? && @user == current_user %>
+    <div class="container" id="new-button-container">
+      <div class="row justify-content-md-center">
+        <div class="mt-4">
+          <%= link_to 'NEW', new_article_path(), class: "btn btn-success btn-lg shadow-sm rounded"%>
+        </div>
+      </div>
+    </div>
+  <% end %>
   <div class="flickr_pagination">
     <%= will_paginate @articles, :container => false %>
   </div>

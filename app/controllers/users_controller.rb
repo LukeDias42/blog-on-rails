@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
 
-  before_action :set_user, only: [:show, :edit, :update]
-  before_action :require_user, except: [:show, :index]
-  before_action :require_same_user, only: [:edit, :update]
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :require_user, except: [:show, :index, :new, :create]
+  before_action :require_same_user, only: [:edit, :update, :destroy]
   before_action :require_no_log_in, only: [ :new, :create]
 
 
@@ -41,9 +41,16 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+    current_user.destroy
+    session[:user_id] = nil
+    flash[:notice] = "Account and all associated articles have been deleted"
+    redirect_to root_path
+  end
+
   private
   def set_user
-    @user = User.find(params[:id])
+    @user = current_user #User.find(params[:id])
   end
 
   def user_params
@@ -51,9 +58,9 @@ class UsersController < ApplicationController
   end
 
   def require_same_user
-    if current_user !=  @article.user
-      flash[:alert] = "You can only edit your profile information!"
-      redirect_to @article
+    if current_user !=  @user
+      flash[:alert] = "You can only edit your own profile information!"
+      redirect_to @user
     end
   end
 
