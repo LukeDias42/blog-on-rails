@@ -33,7 +33,7 @@
 
             <% if !@user.new_record? %>
               <div class="form-group row justify-content-center">
-                <%= link_to "DELETE ACCOUNT", user_path(current_user), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger btn-lg shadow-sm rounded" %>
+                <%= link_to "DELETE ACCOUNT", user_path(@user), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger btn-lg shadow-sm rounded" %>
               </div>
             <% end %>
             <div class="form-group row justify-content-center">

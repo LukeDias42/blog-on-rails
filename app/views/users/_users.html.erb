@@ -17,11 +17,15 @@
           <p class="card-text">
           <%= pluralize(user.articles.count, "article") %>
           </p>
-          <%= link_to 'View profile', user, class: "btn btn-outline-primary" %>
+          <%= link_to 'View profile', user_path(user), class: "btn btn-outline-primary" %>
 
           <% if logged_in? && user == current_user %>
-          <%= link_to 'Edit profile', edit_user_path(user), class: "btn btn-outline-info" %>
+            <%= link_to 'Edit profile', edit_user_path(user), class: "btn btn-outline-info" %>
           <% end %>
+          <% if logged_in? && current_user.admin? %>
+            <%= link_to "DELETE ACCOUNT", user_path(@user), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger btn-lg shadow-sm rounded" %>
+          <% end %>
+
 
         </div>
 

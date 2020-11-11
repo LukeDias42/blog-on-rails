@@ -9,6 +9,10 @@
 
           <% if logged_in? %>
             <li class="nav-item">
+              <%= current_user.admin? ? (link_to "Admin ", current_user, class:"nav-link") : ""  %> 
+            </li>
+
+            <li class="nav-item">
               <%= link_to gravatar_for(current_user, size: 30), current_user, class:"nav-link" %>
             </li>
 
